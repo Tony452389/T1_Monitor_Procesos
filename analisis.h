@@ -3,5 +3,5 @@
 #include <vector>
 #include "procesos.h"
 
-void analizarProcesos(const std::vector<Proceso>& procesos);
+void analizarBasico(std::vector<Proceso> procesos, int limite);
 

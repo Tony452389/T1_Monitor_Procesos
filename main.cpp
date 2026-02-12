@@ -9,11 +9,23 @@ int main(){
     try {
 		auto procesos = obtenerProcesos();
 		
-		std::cout << "Procesos encontrados: " 
-				  << procesos.size() << "\n";
+		int limite;
+		bool entradaValida = false;
 
-		analizarProcesos(procesos);
+		while(!entradaValida) {
+			std::cout << "Ingrese el numero de procesos a mostrar (1-" << procesos.size() << "): ";
+			std::cin >> limite;
+			if (std::cin.fail() || limite < 1 || limite > procesos.size()) {
+				std::cin.clear(); // Limpia el estado de error
+				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignora la entrada no válida
+				std::cout << "Entrada invalida. Por favor, ingrese un numero entre 1 y " << procesos.size() << ".\n";
+			} else {
+				entradaValida = true;
+			}
+		}
 		
+		analizarBasico(procesos, limite);
+		//registrarProcesos(procesos);
     }
 	catch (const std::exception& ex) {
 		std::cerr << "Error: " << ex.what() << std::endl;

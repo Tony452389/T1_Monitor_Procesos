@@ -1,0 +1,5 @@
+Registro de Procesos del Sistema
+--------------------------------
+
+Total de procesos: 252
+Procesos con alto consumo (>500 MB): 3

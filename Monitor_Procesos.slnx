@@ -3,5 +3,5 @@
     <Platform Name="x64" />
     <Platform Name="x86" />
   </Configurations>
-  <Project Path="Monitor_Procesos.vcxproj" />
+  <Project Path="Monitor_Procesos.vcxproj" Id="0e7c0c1a-94b2-475f-a603-5f58e22e8871" />
 </Solution>
