@@ -127,7 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="analisis.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="procesos.cpp" />
+    <ClCompile Include="registro.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="analisis.h" />
+    <ClInclude Include="procesos.h" />
+    <ClInclude Include="registro.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
