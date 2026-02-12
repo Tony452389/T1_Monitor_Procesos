@@ -40,7 +40,7 @@ void analizarBasico(std::vector<Proceso> procesos, int limite) {
 	std::cout << "\nMostrando los " << limite 
 			  << " procesos con mayor consumo de memoria.\n";
 
-	std::cout << "\n---------- Resumen ----------\n";
+	std::cout << "\n-------------------- Resumen --------------------\n";
 	std::cout << "Total de procesos: " << procesos.size() << "\n";
 	std::cout << "Procesos con alto consumo de memoria (>500 MB): " << altoConsumo << "\n";
 }

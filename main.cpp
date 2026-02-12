@@ -25,7 +25,7 @@ int main(){
 		}
 		
 		analizarBasico(procesos, limite);
-		//registrarProcesos(procesos);
+		registrarProcesos(procesos, limite);
     }
 	catch (const std::exception& ex) {
 		std::cerr << "Error: " << ex.what() << std::endl;

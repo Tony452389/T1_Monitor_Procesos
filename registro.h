@@ -3,4 +3,4 @@
 #include <vector>
 #include "procesos.h"
 
-void registrarProcesos(const std::vector<Proceso>& procesos);
+void registrarProcesos(std::vector<Proceso> procesos, int limite);
