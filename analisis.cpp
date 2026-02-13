@@ -25,7 +25,12 @@ ResultadoAnalisis analisisBasico(std::vector<Proceso> procesos) {
 		ProcesoSospechoso sospechoso;
 		bool esSospechoso = false;
 
-		if (p.memoriaMB > 1000) {
+		if (p.memoriaMB > 1500) {
+			sospechoso.nivel = "CRITICO";
+			sospechoso.razon = "Consumo de memoria excesivo.";
+			esSospechoso = true;
+		}
+		else if (p.memoriaMB > 1000) {
 			sospechoso.nivel = "ALTO";
 			sospechoso.razon = "Consumo de memoria demasiado alto.";
 			esSospechoso = true;
@@ -46,5 +51,34 @@ ResultadoAnalisis analisisBasico(std::vector<Proceso> procesos) {
 			resultado.sospechosos.push_back(sospechoso);
 		}
 	}
+	return resultado;
+}
+
+ResultadoAnalisis analisisEstricto(std::vector<Proceso> procesos) {
+	ResultadoAnalisis resultado = analisisBasico(procesos);
+
+	//Calcular memooria total
+	resultado.memoriaTotal = 0;
+
+	for (const auto& p : resultado.procesosOrdenados) {
+		resultado.memoriaTotal += p.memoriaMB;
+	}
+
+	//Calcular memoria promedio
+	if (resultado.totalProcesos > 0) {
+		resultado.memoriaPromedio = static_cast<double>(resultado.memoriaTotal) / resultado.totalProcesos;
+	}
+
+	//Identificar proceso con mayor consumo de memoria
+	if (!resultado.procesosOrdenados.empty()) {
+		resultado.procesoMayorMemoria = resultado.procesosOrdenados[0];
+	}
+
+	//Obtener top 5 procesos por consumo de memoria
+	int limite = std::min(5, resultado.totalProcesos);
+	for (int i = 0; i < limite; ++i) {
+		resultado.top5Memoria.push_back(resultado.procesosOrdenados[i]);
+	}
+
 	return resultado;
 }

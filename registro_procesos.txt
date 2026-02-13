@@ -1,330 +1,313 @@
 
 
 --------------- Analisis Basico de Procesos del Sistema ---------------
-Fecha y Hora: 2026-02-12 14:28:08
+Fecha :2026-02-12   Hora: 19:38:25
+-----------------------------------------------------------------------
 
+
+----------------- Tabla de Procesos del Sistema -----------------
 -----------------------------------------------------------------
 PID       Nombre del Proceso                      Memoria (MB)   
 -----------------------------------------------------------------
-1624      ChatGPT.exe                             1328           
-16044     devenv.exe                              1073           
-14112     msedgewebview2.exe                      581            
-12040     opera.exe                               518            
-8004      opera.exe                               476            
-3440      copilot-language-server.exe             442            
-2820      Spotify.exe                             366            
-21880     explorer.exe                            347            
-23416     opera.exe                               303            
-22472     Spotify.exe                             289            
-18228     ChatGPT.exe                             287            
-11276     opera.exe                               276            
-22308     msedgewebview2.exe                      242            
-5216      MsMpEng.exe                             222            
-13268     ServiceHub.IntellicodeModelService.exe  222            
-18556     DevHub.exe                              220            
-3656      msedgewebview2.exe                      206            
-10308     Spotify.exe                             201            
-9484      ChatGPT.exe                             199            
-18220     opera.exe                               183            
-15392     msedgewebview2.exe                      180            
-22996     PhoneExperienceHost.exe                 170            
-19056     vcpkgsrv.exe                            164            
-4200      dwm.exe                                 160            
-6436      StartMenuExperienceHost.exe             157            
-12364     SearchHost.exe                          146            
-19672     ms-teams.exe                            136            
+10300     devenv.exe                              1053           
+2912      ChatGPT.exe                             883            
+18564     opera.exe                               497            
+3780      explorer.exe                            441            
+19552     opera.exe                               433            
+20216     copilot-language-server.exe             428            
+7544      Spotify.exe                             407            
+19916     opera.exe                               383            
+21128     opera.exe                               338            
+3312      msedgewebview2.exe                      324            
+8964      Spotify.exe                             292            
+12436     ChatGPT.exe                             268            
+8920      Spotify.exe                             226            
+16472     ChatGPT.exe                             225            
+14940     ServiceHub.IntellicodeModelService.exe  221            
+5216      MsMpEng.exe                             217            
+20180     DevHub.exe                              205            
+3132      ChatGPT.exe                             197            
+5944      opera.exe                               180            
+13376     PhoneExperienceHost.exe                 166            
+10364     StartMenuExperienceHost.exe             157            
+18440     SearchHost.exe                          147            
+22624     dwm.exe                                 138            
 188       Secure System                           135            
-15156     ms-teams.exe                            135            
-14572     msedgewebview2.exe                      134            
-9696      lghub_agent.exe                         132            
-15796     msedgewebview2.exe                      119            
-23072     vcpkgsrv.exe                            111            
-20804     opera.exe                               110            
-1688      vcpkgsrv.exe                            104            
-17356     lghub_system_tray.exe                   104            
-14880     WindowsTerminal.exe                     99             
-17184     msedgewebview2.exe                      99             
-22612     PerfWatson2.exe                         90             
-8184      ShellExperienceHost.exe                 89             
-15620     opera.exe                               86             
-14268     RadeonSoftware.exe                      85             
-6788      Spotify.exe                             83             
-3112      msedgewebview2.exe                      83             
-18240     LockApp.exe                             77             
-17328     MSBuild.exe                             72             
-18504     opera.exe                               71             
-1736      opera.exe                               67             
-23500     OneDrive.Sync.Service.exe               66             
-21548     opera.exe                               66             
-2916      CrossDeviceResume.exe                   63             
-20772     opera.exe                               61             
-18904     ShellHost.exe                           58             
-17196     ChatGPT.exe                             57             
-22568     vctip.exe                               57             
-16172     opera.exe                               56             
-9416      ApplicationFrameHost.exe                55             
-18844     Widgets.exe                             54             
-232       Registry                                53             
-18472     Spotify.exe                             50             
+3788      Memory Compression                      133            
+23416     lghub_agent.exe                         125            
+13152     opera.exe                               123            
+1404      msedgewebview2.exe                      120            
+7952      lghub_system_tray.exe                   107            
+7908      MSI.CentralServer.exe                   105            
+9796      msedgewebview2.exe                      102            
+13220     WindowsTerminal.exe                     99             
+13840     PerfWatson2.exe                         90             
+21320     RadeonSoftware.exe                      84             
+22336     msedgewebview2.exe                      83             
+12476     Spotify.exe                             83             
+12328     opera.exe                               83             
+20564     vcpkgsrv.exe                            79             
+5256      LockApp.exe                             78             
+2892      opera.exe                               76             
+18220     opera.exe                               74             
+8112      MSBuild.exe                             70             
+4256      opera.exe                               69             
+820       opera.exe                               67             
+1648      opera.exe                               67             
+17160     OneDrive.Sync.Service.exe               64             
+6484      opera.exe                               63             
+22340     CrossDeviceResume.exe                   63             
+19868     ChatGPT.exe                             61             
+11300     opera.exe                               60             
+9052      opera.exe                               59             
+20860     ShellHost.exe                           58             
+16900     opera.exe                               57             
+13168     msedgewebview2.exe                      57             
+22024     vctip.exe                               56             
+11964     ApplicationFrameHost.exe                55             
+20420     Spotify.exe                             50             
+232       Registry                                49             
 11220     SearchIndexer.exe                       49             
-17548     sihost.exe                              48             
-5004      svchost.exe                             46             
-12516     AppActions.exe                          46             
-5352      RuntimeBroker.exe                       45             
-5012      svchost.exe                             45             
-18792     svchost.exe                             44             
-7908      MSI.CentralServer.exe                   43             
-11428     LEDKeeper2.exe                          43             
-9892      msedgewebview2.exe                      41             
-19836     svchost.exe                             41             
-20428     msedgewebview2.exe                      39             
-20336     RuntimeBroker.exe                       39             
-3320      opera.exe                               39             
-10936     WmiPrvSE.exe                            38             
-3788      Memory Compression                      37             
+5012      svchost.exe                             49             
+18396     sihost.exe                              48             
+2712      msedgewebview2.exe                      48             
+18784     Widgets.exe                             47             
+23092     RuntimeBroker.exe                       46             
+20476     AppActions.exe                          46             
+8696      svchost.exe                             44             
+5004      svchost.exe                             42             
+9344      svchost.exe                             40             
+10936     WmiPrvSE.exe                            39             
+22268     msedgewebview2.exe                      39             
+7652      RuntimeBroker.exe                       39             
+4812      OfficeClickToRun.exe                    37             
+23244     opera.exe                               37             
 4068      svchost.exe                             36             
-23464     svchost.exe                             36             
-6452      ChatGPT.exe                             34             
-4812      OfficeClickToRun.exe                    34             
-2508      ctfmon.exe                              33             
-19688     backgroundTaskHost.exe                  31             
-13672     CC_Engine_x64.exe                       29             
-1704      svchost.exe                             28             
-22452     svchost.exe                             28             
-10828     Spotify.exe                             27             
-7936      gamingservices.exe                      27             
-12140     WidgetService.exe                       25             
+16860     svchost.exe                             34             
+13616     ChatGPT.exe                             34             
+4788      ctfmon.exe                              33             
+17060     LEDKeeper2.exe                          31             
+1704      svchost.exe                             30             
+20868     CC_Engine_x64.exe                       29             
+7936      gamingservices.exe                      28             
+15020     Spotify.exe                             27             
+1568      lsass.exe                               26             
+7884      opera.exe                               26             
 8752      svchost.exe                             25             
-1568      lsass.exe                               25             
 5188      svchost.exe                             25             
+10980     WidgetService.exe                       25             
+19672     opera.exe                               25             
 4516      lghub_updater.exe                       25             
-22408     opera.exe                               24             
-8032      svchost.exe                             23             
-16784     opera.exe                               23             
-4292      svchost.exe                             23             
-23504     msedgewebview2.exe                      23             
-1728      taskhostw.exe                           22             
-3520      svchost.exe                             22             
-23488     atieclxx.exe                            21             
-19188     msedgewebview2.exe                      21             
-12352     vcpkgsrv.exe                            21             
-17308     vcpkgsrv.exe                            20             
+4292      svchost.exe                             24             
+6408      svchost.exe                             24             
+15736     svchost.exe                             24             
+11808     opera.exe                               23             
+7708      svchost.exe                             23             
+2136      svchost.exe                             21             
+12704     msedgewebview2.exe                      21             
+3520      svchost.exe                             21             
+21552     atieclxx.exe                            21             
+11284     taskhostw.exe                           21             
+3360      MpDefenderCoreService.exe               20             
+9584      msedgewebview2.exe                      20             
 2768      audiodg.exe                             20             
-5324      RuntimeBroker.exe                       20             
-13132     backgroundTaskHost.exe                  20             
-9980      vcpkgsrv.exe                            20             
-17316     msedgewebview2.exe                      20             
-2136      svchost.exe                             20             
-3360      MpDefenderCoreService.exe               19             
-6408      svchost.exe                             19             
-20848     RtkAudUService64.exe                    19             
-4648      svchost.exe                             18             
-9348      svchost.exe                             18             
+8600      svchost.exe                             20             
+18804     vcpkgsrv.exe                            20             
+10700     vcpkgsrv.exe                            20             
+1220      RtkAudUService64.exe                    19             
+4648      svchost.exe                             19             
+3232      svchost.exe                             18             
 14556     svchost.exe                             17             
-2504      backgroundTaskHost.exe                  17             
-3944      svchost.exe                             17             
+12808     dllhost.exe                             17             
+6884      backgroundTaskHost.exe                  17             
+3944      svchost.exe                             16             
+18436     svchost.exe                             16             
 1832      svchost.exe                             16             
-5864      svchost.exe                             16             
-12728     svchost.exe                             16             
-8600      svchost.exe                             16             
+18688     svchost.exe                             16             
+7796      svchost.exe                             16             
+4744      Mystic_Light_Service.exe                15             
 10440     svchost.exe                             15             
-7796      svchost.exe                             15             
-12404     svchost.exe                             14             
-7976      RuntimeBroker.exe                       14             
-5072      svchost.exe                             14             
-2360      svchost.exe                             14             
+5072      svchost.exe                             15             
+1916      OpenConsole.exe                         14             
+12088     svchost.exe                             14             
 2700      svchost.exe                             14             
-15748     OpenConsole.exe                         14             
+17732     RuntimeBroker.exe                       14             
+5224      svchost.exe                             14             
+12264     svchost.exe                             14             
+4876      winlogon.exe                            14             
+16740     StandardCollector.Service.exe           14             
+3696      svchost.exe                             13             
 2472      svchost.exe                             13             
-5224      svchost.exe                             13             
-6140      winlogon.exe                            13             
-3696      svchost.exe                             12             
-4744      Mystic_Light_Service.exe                12             
-7288      opera_crashreporter.exe                 12             
-3004      svchost.exe                             12             
-20388     vgtray.exe                              11             
-22124     unsecapp.exe                            11             
-19300     tasklist.exe                            11             
+16204     svchost.exe                             12             
+14976     opera_crashreporter.exe                 12             
+16848     svchost.exe                             12             
+16100     RuntimeBroker.exe                       11             
+3532      atiesrxx.exe                            11             
+18504     vgtray.exe                              11             
+21968     svchost.exe                             11             
+2260      svchost.exe                             11             
+5372      UserOOBEBroker.exe                      11             
+20632     unsecapp.exe                            11             
 2064      svchost.exe                             11             
-15836     UserOOBEBroker.exe                      11             
-19952     RuntimeBroker.exe                       11             
-18052     svchost.exe                             11             
-3532      atiesrxx.exe                            10             
-15948     StandardCollector.Service.exe           10             
+15936     tasklist.exe                            11             
+11924     ms-teams.exe                            10             
 3872      svchost.exe                             10             
+22444     AMDRSSrcExt.exe                         10             
 8428      svchost.exe                             10             
-2260      svchost.exe                             10             
-23112     conhost.exe                             9              
-3972      AMDRSSrcExt.exe                         9              
-1516      services.exe                            9              
-15560     msedgewebview2.exe                      9              
+17008     ms-teams.exe                            10             
+14184     svchost.exe                             10             
+23412     msedgewebview2.exe                      9              
+9304      svchost.exe                             9              
+4728      RtkAudUService64.exe                    9              
 4276      svchost.exe                             9              
-14184     svchost.exe                             9              
-19364     msedgewebview2.exe                      9              
-19296     AMDRSServ.exe                           8              
-16824     MSI.TerminalServer.exe                  8              
-9304      svchost.exe                             8              
-1876      svchost.exe                             8              
-16076     SecurityHealthService.exe               8              
-8252      svchost.exe                             8              
-5048      DuplicateDaemon.exe                     8              
+1516      services.exe                            9              
+19516     svchost.exe                             9              
+23372     conhost.exe                             9              
+11888     msedgewebview2.exe                      9              
+21488     AMDRSServ.exe                           9              
+20968     Spotify.exe                             8              
+11556     csrss.exe                               8              
 5104      MSI_Case_Service.exe                    8              
 4304      svchost.exe                             8              
-16908     Spotify.exe                             8              
-23224     conhost.exe                             7              
-2300      svchost.exe                             7              
-16652     svchost.exe                             7              
-5032      DuplicateFileMonitor.exe                7              
-2292      svchost.exe                             7              
-13952     svchost.exe                             7              
-4620      spoolsv.exe                             7              
-7456      WmiPrvSE.exe                            7              
-7860      conhost.exe                             7              
-5056      logi_lamparray_service.exe              7              
-5064      svchost.exe                             7              
+1876      svchost.exe                             8              
+4620      spoolsv.exe                             8              
+16076     SecurityHealthService.exe               8              
+8252      svchost.exe                             8              
+3088      svchost.exe                             8              
+5032      DuplicateFileMonitor.exe                8              
+5048      DuplicateDaemon.exe                     8              
+11332     conhost.exe                             7              
+8196      AggregatorHost.exe                      7              
+18768     conhost.exe                             7              
 2088      svchost.exe                             7              
-3088      svchost.exe                             7              
-10548     csrss.exe                               7              
-11592     conhost.exe                             7              
-1756      svchost.exe                             6              
-864       conhost.exe                             6              
-8196      AggregatorHost.exe                      6              
-1912      svchost.exe                             6              
+2292      svchost.exe                             7              
+2300      svchost.exe                             7              
+2576      svchost.exe                             7              
+1756      svchost.exe                             7              
+7456      WmiPrvSE.exe                            7              
+9616      MSI.TerminalServer.exe                  7              
+5056      logi_lamparray_service.exe              7              
+10216     svchost.exe                             7              
+7492      svchost.exe                             7              
+5064      svchost.exe                             7              
+11472     conhost.exe                             7              
+4944      svchost.exe                             7              
+13304     svchost.exe                             6              
+12600     VsDebugConsole.exe                      6              
+3864      svchost.exe                             6              
 3828      svchost.exe                             6              
+6844      svchost.exe                             6              
+4536      MSI_Companion_Service.exe               6              
+22568     conhost.exe                             6              
+5040      LightKeeperService.exe                  6              
+2308      svchost.exe                             6              
 3016      svchost.exe                             6              
-2576      svchost.exe                             6              
-15900     VsDebugConsole.exe                      6              
-21012     svchost.exe                             6              
 4764      svchost.exe                             6              
-7492      svchost.exe                             6              
-16560     MSI.True Color.exe                      5              
+21012     svchost.exe                             6              
+1912      svchost.exe                             6              
+2364      fontdrvhost.exe                         6              
+21328     msedgewebview2.exe                      5              
+21972     MSI.True Color.exe                      5              
 3704      svchost.exe                             5              
 5848      svchost.exe                             5              
-6844      svchost.exe                             5              
-7952      fontdrvhost.exe                         5              
+9276      NisSrv.exe                              5              
 8592      svchost.exe                             5              
-13304     svchost.exe                             5              
-2308      svchost.exe                             5              
-5040      LightKeeperService.exe                  5              
-4536      MSI_Companion_Service.exe               5              
-3204      svchost.exe                             4              
-10044     cmd.exe                                 4              
-8220      svchost.exe                             4              
-7520      svchost.exe                             4              
+5688      svchost.exe                             5              
 1396      wininit.exe                             4              
-4728      RtkAudUService64.exe                    4              
-23188     Monitor_Procesos.exe                    4              
-12656     cmd.exe                                 4              
+7520      svchost.exe                             4              
+8220      svchost.exe                             4              
 3976      svchost.exe                             4              
+3316      svchost.exe                             4              
 3388      svchost.exe                             4              
-9276      NisSrv.exe                              4              
-17600     DaemonUpdateAssistant.exe               4              
-5688      svchost.exe                             4              
-3864      svchost.exe                             4              
+3204      svchost.exe                             4              
 3292      svchost.exe                             4              
-5112      MSI_Central_Service.exe                 3              
-3316      svchost.exe                             3              
-7928      gamingservicesnet.exe                   3              
-15996     svchost.exe                             3              
-4864      svchost.exe                             3              
-11232     svchost.exe                             3              
+4504      cmd.exe                                 4              
+22604     Monitor_Procesos.exe                    4              
+15136     cmd.exe                                 4              
+4312      WUDFHost.exe                            3              
 1132      csrss.exe                               3              
-18084     CPUMetricsServer.exe                    2              
-7944      svchost.exe                             2              
-5380      SystemSettings.exe                      2              
-9084      svchost.exe                             2              
-2488      svchost.exe                             2              
-19908     svchost.exe                             2              
-5084      NgcIso.exe                              2              
+3884      DaemonUpdateAssistant.exe               3              
+5112      MSI_Central_Service.exe                 3              
+11232     svchost.exe                             3              
+2072      svchost.exe                             3              
+20544     CPUMetricsServer.exe                    3              
+7928      gamingservicesnet.exe                   3              
+4864      svchost.exe                             3              
+15996     svchost.exe                             3              
 2076      svchost.exe                             2              
-2072      svchost.exe                             2              
+3952      SystemSettings.exe                      2              
+2276      svchost.exe                             2              
+19908     svchost.exe                             2              
+7944      svchost.exe                             2              
+9084      svchost.exe                             2              
+22556     msedgewebview2.exe                      2              
+2488      svchost.exe                             2              
+5084      NgcIso.exe                              2              
+4         System                                  2              
+2724      wlanext.exe                             2              
+3684      svchost.exe                             2              
 3528      amdfendrsr.exe                          2              
-4312      WUDFHost.exe                            2              
-3684      svchost.exe                             1              
-8016      conhost.exe                             1              
-2724      wlanext.exe                             1              
-4996      AmdPpkgSvc.exe                          1              
+5208      svchost.exe                             2              
 1560      LsaIso.exe                              1              
-13968     conhost.exe                             1              
-9532      svchost.exe                             1              
-6552      vshost.exe                              1              
-5208      svchost.exe                             1              
-4         System                                  1              
+1744      fontdrvhost.exe                         1              
 836       svchost.exe                             1              
-20976     cncmd.exe                               1              
-17368     conhost.exe                             1              
-2276      svchost.exe                             1              
-11620     cmd.exe                                 0              
-1744      fontdrvhost.exe                         0              
-21028     amdow.exe                               0              
+8016      conhost.exe                             1              
+11336     amdow.exe                               1              
+9532      svchost.exe                             1              
+13708     cmd.exe                                 1              
+13316     vshost.exe                              1              
+16996     conhost.exe                             1              
+7400      conhost.exe                             1              
+4996      AmdPpkgSvc.exe                          1              
+4144      cncmd.exe                               0              
 0         System Idle Process                     0              
 720       smss.exe                                0              
 
 Total de procesos: 253
------------------------------------------------------------------
+----------------------------------------------------------------- 
 
------------------------------------------------------------------
-PROCESOS SOSPECHOSOS:
 
--------------------------------------------------------
-PID: 1624
-Nombre del Proceso: ChatGPT.exe
-Memoria Utilizada: 1328 MB
-Nivel de Sospecha: ALTO
-Razon: Consumo de memoria demasiado alto.
-
--------------------------------------------------------
-PID: 16044
+------------------- Procesos Sospechosos -------------------
+------------------------------------------------------------
+PID: 10300
 Nombre del Proceso: devenv.exe
-Memoria Utilizada: 1073 MB
+Memoria Utilizada: 1053 MB
 Nivel de Sospecha: ALTO
 Razon: Consumo de memoria demasiado alto.
-
--------------------------------------------------------
-PID: 14112
-Nombre del Proceso: msedgewebview2.exe
-Memoria Utilizada: 581 MB
+------------------------------------------------------------
+PID: 2912
+Nombre del Proceso: ChatGPT.exe
+Memoria Utilizada: 883 MB
 Nivel de Sospecha: MEDIO
 Razon: Consumo de memoria elevado.
-
--------------------------------------------------------
-PID: 12040
-Nombre del Proceso: opera.exe
-Memoria Utilizada: 518 MB
-Nivel de Sospecha: MEDIO
-Razon: Consumo de memoria elevado.
-
--------------------------------------------------------
-PID: 3440
+------------------------------------------------------------
+PID: 20216
 Nombre del Proceso: copilot-language-server.exe
-Memoria Utilizada: 442 MB
+Memoria Utilizada: 428 MB
 Nivel de Sospecha: BAJO
 Razon: Nombre del proceso inusualmente largo.
-
--------------------------------------------------------
-PID: 13268
+------------------------------------------------------------
+PID: 14940
 Nombre del Proceso: ServiceHub.IntellicodeModelService.exe
-Memoria Utilizada: 222 MB
+Memoria Utilizada: 221 MB
 Nivel de Sospecha: BAJO
 Razon: Nombre del proceso inusualmente largo.
-
--------------------------------------------------------
-PID: 6436
+------------------------------------------------------------
+PID: 10364
 Nombre del Proceso: StartMenuExperienceHost.exe
 Memoria Utilizada: 157 MB
 Nivel de Sospecha: BAJO
 Razon: Nombre del proceso inusualmente largo.
-
--------------------------------------------------------
-PID: 15948
+------------------------------------------------------------
+PID: 16740
 Nombre del Proceso: StandardCollector.Service.exe
-Memoria Utilizada: 10 MB
+Memoria Utilizada: 14 MB
 Nivel de Sospecha: BAJO
 Razon: Nombre del proceso inusualmente largo.
-
--------------------------------------------------------
+------------------------------------------------------------
 PID: 5056
 Nombre del Proceso: logi_lamparray_service.exe
 Memoria Utilizada: 7 MB
 Nivel de Sospecha: BAJO
 Razon: Nombre del proceso inusualmente largo.
+------------------------------------------------------------

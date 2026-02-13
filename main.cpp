@@ -8,9 +8,9 @@
 
 // Monitor_Procesos.cpp : Este archivo contiene la función "main". La ejecución del programa comienza y termina ahí.
 int main(){
-    try {
+	try {
 		auto procesos = obtenerProcesos();
-		
+
 		//-------------------------- Menu ------------------------------------------------
 		int opcion;
 		bool opcionValida = false;
@@ -26,20 +26,22 @@ int main(){
 				std::cin.clear(); // Limpia el estado de error
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Ignora la entrada no válida
 				std::cout << "Opcion invalida. Por favor, ingrese 1 o 2.\n";
-			} else {
+			}
+			else {
 				opcionValida = true;
 			}
 		}
 
-		if(opcionValida){
+		if (opcionValida) {
 			system("cls"); // Limpiar la pantalla
 		}
 
-		//------------------------- Analisis Basico ------------------------------------------------
+		ResultadoAnalisis resultado;
+		//------------------------------------------------------------------------ Analisis Basico -----------------------------------------------------------------------------
 		if (opcion == 1) {
-			ResultadoAnalisis resultado = analisisBasico(procesos);
+			resultado = analisisBasico(procesos);
 			registrarProcesos(resultado);
-			
+
 			//Solicitar limite de procesos a mostrar
 			int limite;
 			bool entradaValida = false;
@@ -58,17 +60,18 @@ int main(){
 				}
 			}
 
-			if(entradaValida){
+			if (entradaValida) {
 				system("cls"); // Limpiar la pantalla
 			}
 
-			std::cout << "\n------------------ Analisis Basico de Procesos ------------------\n";
+			std::cout << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
+			std::cout << "-----------------------------------------------------------------\n";
 
 			std::cout << std::left
-				<< std::setw(10) << "PID"
-				<< std::setw(40) << "Nombre del Proceso"
-				<< std::setw(15) << "Memoria (MB)"
-				<< "\n";
+					  << std::setw(10) << "PID"
+					  << std::setw(40) << "Nombre del Proceso"
+					  << std::setw(15) << "Memoria (MB)"
+					  << "\n";
 
 			std::cout << "-----------------------------------------------------------------\n";
 
@@ -76,25 +79,89 @@ int main(){
 				const auto& p = resultado.procesosOrdenados[i];
 
 				std::cout << std::left
-					<< std::setw(10) << p.pid
-					<< std::setw(40) << p.nombre
-					<< std::setw(15) << p.memoriaMB
-					<< "\n";
+						  << std::setw(10) << p.pid
+						  << std::setw(40) << p.nombre
+						  << std::setw(15) << p.memoriaMB
+						  << "\n";
 			}
-
-			std::cout << "\nTotal de Procesos "
-				<< resultado.totalProcesos << "\n";
-			std::cout << "-----------------------------------------------------------------\n\n";
+			std::cout << "\nProcesos Mostrados: "
+					  << limite << "\n";
+			std::cout << "Total de Procesos "
+					  << resultado.totalProcesos << "\n";
 
 			std::cout << "Procesos con alto consumo de memoria (>500 MB): "
 				<< resultado.altoConsumo << "\n";
+			std::cout << "-----------------------------------------------------------------\n\n";
 		}
-		//------------------------- Analisis Estricto ------------------------------------------------
+		//------------------------------------------------------------------------ Analisis Estricto -////////////--------------------------------------------------------------
 		else if (opcion == 2) {
-			std::cout << "Analisis Estricto no implementado en esta version.\n";
+			resultado = analisisEstricto(procesos);
+			registrarProcesos(resultado);
+
+			//--------------------------------------------- Tabla de Procesos ---------------------------------------------
+			int limite = 20; // Limite de procesos a mostrar en la tabla
+			std::cout << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
+			std::cout << "-----------------------------------------------------------------\n";
+
+			std::cout << std::left
+					  << std::setw(10) << "PID"
+					  << std::setw(40) << "Nombre del Proceso"
+					  << std::setw(15) << "Memoria (MB)"
+					  << "\n";
+
+			std::cout << "-----------------------------------------------------------------\n";
+
+			for (int i = 0; i < limite; ++i) {
+				const auto& p = resultado.procesosOrdenados[i];
+
+				std::cout << std::left
+						  << std::setw(10) << p.pid
+						  << std::setw(40) << p.nombre
+						  << std::setw(15) << p.memoriaMB
+						  << "\n";
+			}
+
+			std::cout << "\nProcesos Mostrados: " 
+					  << limite << "\n";
+			std::cout << "Total de Procesos "
+					  << resultado.totalProcesos << "\n\n";
+			
+			std::cout << "Procesos con alto consumo de memoria (>500 MB): "
+					  << resultado.altoConsumo << "\n";
+			std::cout << "-----------------------------------------------------------------\n\n";
+
+			//------------------------------------------- Metricas avanzadas --------------------------------------------------
+
+			std::cout << "-------------------------- Metricas avanzadas -----------------------------\n";
+			std::cout << "---------------------------------------------------------------------------\n";
+
+			std::cout << "Memoria Total Utilizada: "
+					  << resultado.memoriaTotal << " MB\n";
+			std::cout << "Memoria Promedio por Proceso: "
+					  << resultado.memoriaPromedio << " MB\n";
+
+			std::cout << "---------------------------------------------------------------------------\n";
+			std::cout << "Proceso con Mayor Consumo de Memoria: \n";
+			std::cout << "PID: "
+					  << resultado.procesoMayorMemoria.pid << "\n";
+			std::cout << "Nombre: "
+					  << resultado.procesoMayorMemoria.nombre << "\n";
+			std::cout << "Memoria Utilizada: "
+					  << resultado.procesoMayorMemoria.memoriaMB << " MB\n";
+
+			std::cout << "---------------------------------------------------------------------------\n"; 
+			std::cout << "Top 5 Procesos por Consumo de Memoria:\n";
+
+			for (const auto& p : resultado.top5Memoria) {
+				std::cout << std::left
+						  << std::setw(10) << p.pid << " - "
+						  << std::setw(40) << p.nombre << " - "
+						  << std::setw(15) << p.memoriaMB << " MB"
+						  << "\n";
+			}
+			std::cout << "---------------------------------------------------------------------------\n";
 		}
-				
-    }
+	}
 	catch (const std::exception& ex) {
 		std::cerr << "Error: " << ex.what() << std::endl;
 	}
