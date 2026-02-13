@@ -48,19 +48,31 @@ int main(){
 			std::cout << "Ingrese el nombre del archivo para guardar el resultado (sin extension): ";
 
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar el buffer de entrada
-			std::getline(std::cin, nombreArchivo);
-			std::cout << "\n";
-
-			//Validar no vacio
-			while (nombreArchivo.empty()) {
-				std::cout << "El nombre del archivo no puede estar vacio. Por favor, ingrese un nombre valido: ";
+			
+			while (true) {
 				std::getline(std::cin, nombreArchivo);
+
+				if (nombreArchivo.empty()) {
+					std::cout << "El nombre del archivo no puede estar vacio. Por favor, intentelo nuevamente: ";
+					continue;
+				}
+
+				size_t punto = nombreArchivo.find_last_of('.');
+
+				if (punto != std::string::npos) {
+					std::string extension = nombreArchivo.substr(punto);
+					if (extension != ".txt") {
+						std::cout << "Extension no valida. El archivo debe tener extension .txt. Por favor, intentelo nuevamente: ";
+						continue;
+					}
+				}
+				else {
+					nombreArchivo += ".txt"; // Agregar extension si no tiene
+				}
+
+				break; // Salir del bucle si el nombre es valido
 			}
 
-			//Agregar extension .txt si no la tiene
-			if (nombreArchivo.find(".txt") == std::string::npos) {
-				nombreArchivo += ".txt";
-			}
 			registrarProcesos(resultado, nombreArchivo);
 
 			int limite = 20; // Limite de procesos a mostrar en la tabla
@@ -103,19 +115,31 @@ int main(){
 
 			std::cout << "Ingrese el nombre del archivo para guardar el resultado (sin extension): ";
 			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar el buffer de entrada
-			std::getline(std::cin, nombreArchivo);
-			std::cout << "\n";
-
-			//Validar no vacio
-			while (nombreArchivo.empty()) {
-				std::cout << "El nombre del archivo no puede estar vacio. Por favor, ingrese un nombre valido: ";
+			
+			while (true) {
 				std::getline(std::cin, nombreArchivo);
+				
+				if (nombreArchivo.empty()) {
+					std::cout << "El nombre del archivo no puede estar vacio. Por favor, intentelo nuevamente: ";
+					continue;
+				}
+				
+				size_t punto = nombreArchivo.find_last_of('.');
+
+				if (punto != std::string::npos) {
+					std::string extension = nombreArchivo.substr(punto);
+					if (extension != ".txt") {
+						std::cout << "Extension no valida. El archivo debe tener extension .txt. Por favor, intentelo nuevamente: ";
+						continue;
+					}
+				}
+				else {
+					nombreArchivo += ".txt"; // Agregar extension si no tiene
+				}
+
+				break; // Salir del bucle si el nombre es valido
 			}
 
-			//Agregar extension .txt si no la tiene
-			if (nombreArchivo.find(".txt") == std::string::npos) {
-				nombreArchivo += ".txt";
-			}
 			registrarProcesos(resultado, nombreArchivo);
 
 			//Solicitar limite de procesos a mostrar

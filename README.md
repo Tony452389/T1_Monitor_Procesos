@@ -67,6 +67,7 @@ El programa recibe dos tipos de entrada:
 2. Entrada del usuario:
    - Selección del tipo de análisis (1 o 2).
    - Cantidad de procesos a visualizar (entero dentro del rango permitido).
+   - Nombre del archivo de salida (Validacion de formato y extensión ".txt").
 
 El sistema valida las entradas y maneja errores mediante excepciones.
 
@@ -93,7 +94,7 @@ El programa genera:
    - Resumen estadístico.
    - Métricas avanzadas (modo estricto).
 
-2. Archivo Registro_Procesos.txt:
+2. Archivo ".txt":
    - Fecha y hora del análisis.
    - Lista completa de procesos.
    - Lista de procesos sospechosos.
