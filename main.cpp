@@ -42,6 +42,43 @@ int main(){
 			resultado = analisisBasico(procesos);
 			registrarProcesos(resultado);
 
+			int limite = 20; // Limite de procesos a mostrar en la tabla
+
+			std::cout << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
+			std::cout << "-----------------------------------------------------------------\n";
+
+			std::cout << std::left
+					  << std::setw(10) << "PID"
+					  << std::setw(40) << "Nombre del Proceso"
+					  << std::setw(15) << "Memoria (MB)"
+					  << "\n";
+
+			std::cout << "-----------------------------------------------------------------\n";
+
+			for (int i = 0; i < limite; ++i) {
+				const auto& p = resultado.procesosOrdenados[i];
+
+				std::cout << std::left
+						  << std::setw(10) << p.pid
+						  << std::setw(40) << p.nombre
+						  << std::setw(15) << p.memoriaMB
+						  << "\n";
+			}
+			std::cout << "-----------------------------------------------------------------"; 
+			std::cout << "\nProcesos Mostrados: "
+					  << limite << "\n";
+			std::cout << "Total de Procesos "
+					  << resultado.totalProcesos << "\n\n";
+
+			std::cout << "Procesos con alto consumo de memoria (>500 MB): "
+				<< resultado.altoConsumo << "\n";
+			std::cout << "-----------------------------------------------------------------\n\n";
+		}
+		//------------------------------------------------------------------------ Analisis Estricto ---------------------------------------------------------------------------
+		else if (opcion == 2) {
+			resultado = analisisEstricto(procesos);
+			registrarProcesos(resultado);
+
 			//Solicitar limite de procesos a mostrar
 			int limite;
 			bool entradaValida = false;
@@ -64,42 +101,8 @@ int main(){
 				system("cls"); // Limpiar la pantalla
 			}
 
-			std::cout << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
-			std::cout << "-----------------------------------------------------------------\n";
-
-			std::cout << std::left
-					  << std::setw(10) << "PID"
-					  << std::setw(40) << "Nombre del Proceso"
-					  << std::setw(15) << "Memoria (MB)"
-					  << "\n";
-
-			std::cout << "-----------------------------------------------------------------\n";
-
-			for (int i = 0; i < limite; ++i) {
-				const auto& p = resultado.procesosOrdenados[i];
-
-				std::cout << std::left
-						  << std::setw(10) << p.pid
-						  << std::setw(40) << p.nombre
-						  << std::setw(15) << p.memoriaMB
-						  << "\n";
-			}
-			std::cout << "\nProcesos Mostrados: "
-					  << limite << "\n";
-			std::cout << "Total de Procesos "
-					  << resultado.totalProcesos << "\n";
-
-			std::cout << "Procesos con alto consumo de memoria (>500 MB): "
-				<< resultado.altoConsumo << "\n";
-			std::cout << "-----------------------------------------------------------------\n\n";
-		}
-		//------------------------------------------------------------------------ Analisis Estricto -////////////--------------------------------------------------------------
-		else if (opcion == 2) {
-			resultado = analisisEstricto(procesos);
-			registrarProcesos(resultado);
-
 			//--------------------------------------------- Tabla de Procesos ---------------------------------------------
-			int limite = 20; // Limite de procesos a mostrar en la tabla
+			
 			std::cout << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
 			std::cout << "-----------------------------------------------------------------\n";
 

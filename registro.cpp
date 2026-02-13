@@ -21,7 +21,7 @@ void registrarProcesos(const ResultadoAnalisis& resultado) {
 
 	localtime_s(&tiempoLocal, &tiempo);
 
-	archivo << "\n\n--------------- Analisis Basico de Procesos del Sistema ---------------\n";
+	archivo << "\n\n--------------- Analisis de Procesos del Sistema ---------------\n";
 
 	archivo << "Fecha :"
 			<< std::put_time(&tiempoLocal, "%Y-%m-%d")
@@ -31,7 +31,7 @@ void registrarProcesos(const ResultadoAnalisis& resultado) {
 	
 	archivo << "-----------------------------------------------------------------------\n";
 
-	archivo << "\n\n----------------- Tabla de Procesos del Sistema -----------------\n";
+	archivo << "\n\n----------------- Tabla de Procesos Basica del Sistema -----------------\n";
 	archivo << "-----------------------------------------------------------------\n";
 	archivo << std::left
 			<< std::setw(10) << "PID"
@@ -43,7 +43,7 @@ void registrarProcesos(const ResultadoAnalisis& resultado) {
 	for (const auto& p : resultado.procesosOrdenados) {
 		archivo << std::left
 				<< std::setw(10) << p.pid
-				<< std::setw(40) << p.nombre
+				<< std::setw(50) << p.nombre
 				<< std::setw(15) << p.memoriaMB
 				<< "\n";
 	}
@@ -51,8 +51,80 @@ void registrarProcesos(const ResultadoAnalisis& resultado) {
 	archivo << "\nTotal de procesos: " << resultado.totalProcesos << "\n";
 	archivo << "----------------------------------------------------------------- \n";
 	
-	archivo << "\n\n------------------- Procesos Sospechosos -------------------\n";
-	archivo << "------------------------------------------------------------\n";
+	if (resultado.memoriaTotal > 0) {
+		archivo << "\n\n---------------------------- Metricas avanzadas ---------------------------\n";
+		archivo << "---------------------------------------------------------------------------\n";
+		archivo << "Memoria Total Utilizada: "
+			<< resultado.memoriaTotal << " MB\n";
+
+		archivo << "Memoria Promedio por Proceso: "
+			<< std::fixed << std::setprecision(2)
+			<< resultado.memoriaPromedio << " MB\n";
+
+		archivo << "---------------------------------------------------------------------------\n";
+		archivo << "Proceso con Mayor Consumo de Memoria: \n";
+		archivo << "PID: "
+			<< resultado.procesoMayorMemoria.pid << "\n";
+		archivo << "Nombre: "
+			<< resultado.procesoMayorMemoria.nombre << "\n";
+		archivo << "Memoria Utilizada: "
+			<< resultado.procesoMayorMemoria.memoriaMB << " MB\n";
+
+		archivo << "---------------------------------------------------------------------------\n";
+		archivo << "Top 5 Procesos por Consumo de Memoria:\n";
+
+		for (const auto& p : resultado.top5Memoria) {
+			archivo << std::left
+				<< std::setw(10) << p.pid << "   "
+				<< std::setw(40) << p.nombre << "   "
+				<< std::setw(15) << p.memoriaMB << " MB"
+				<< "\n";
+
+		}
+		archivo << "---------------------------------------------------------------------------\n";
+
+		archivo << "Procesos Duplicados:\n";
+
+		for (const auto& par : resultado.procesosDuplicados) {
+			archivo << std::left
+				<< std::setw(56) << par.first << "    "
+				<< std::setw(3) << par.second << "ocurrencias"
+				<< "\n";
+		}
+		archivo << "---------------------------------------------------------------------------\n";
+
+		archivo << "\n\n--------------------------- Distribucion de Riesgos ---------------------------\n";
+		archivo << "-------------------------------------------------------------------------------\n";
+
+		auto imprimirListaRiesgos = [&](const std::string& titulo, const std::vector<std::string>& lista) {
+			archivo << titulo << " (" << lista.size() << " procesos):\n";
+
+			for (const auto& nombre : lista) {
+				archivo << std::left
+					<< std::setw(56) << nombre
+					<< "\n";
+
+			}
+			archivo << "\n";
+			archivo << "-------------------------------------------------------------------------------\n";
+			};
+
+		imprimirListaRiesgos("Procesos en Estado CRITICO", resultado.listaCriticos);
+		imprimirListaRiesgos("Procesos en Estado ALTO", resultado.listaAltos);
+		imprimirListaRiesgos("Procesos en Estado MODERADO", resultado.listaModerados);
+		imprimirListaRiesgos("Procesos en Estado BAJO", resultado.listaBajos);
+
+		archivo << "\nPorcentaje de Procesos Sospechosos: "
+			<< std::fixed << std::setprecision(2)
+			<< resultado.porcentajeSospechosos << "%\n";
+
+		archivo << "Indice Global de Riesgo: "
+			<< resultado.indiceGlobalRiesgo << "\n";
+		archivo << "-------------------------------------------------------------------------------\n";
+	}
+
+	archivo << "\n\n--------------------------- Procesos Sospechosos ---------------------------\n";
+	archivo << "----------------------------------------------------------------------------\n";
 
 	bool sonSospechosos = false;
 
@@ -66,40 +138,7 @@ void registrarProcesos(const ResultadoAnalisis& resultado) {
 			archivo << "Memoria Utilizada: " << p.memoriaMB << " MB\n";
 			archivo << "Nivel de Sospecha: " << s.nivel << "\n";
 			archivo << "Razon: " << s.razon << "\n";
-			archivo << "------------------------------------------------------------\n";
+			archivo << "----------------------------------------------------------------------------\n";
 		}
-	}
-
-	if (resultado.memoriaTotal > 0) {
-		archivo << "\n\n---------------------------- Metricas avanzadas ---------------------------\n";
-		archivo << "---------------------------------------------------------------------------\n";
-		archivo << "Memoria Total Utilizada: "
-				<< resultado.memoriaTotal << " MB\n";
-
-		archivo << "Memoria Promedio por Proceso: "
-				<< std::fixed << std::setprecision(2)
-				<< resultado.memoriaPromedio << " MB\n";
-
-		archivo << "---------------------------------------------------------------------------\n";
-		archivo << "Proceso con Mayor Consumo de Memoria: \n";
-		archivo << "PID: "
-				<< resultado.procesoMayorMemoria.pid << "\n";
-		archivo << "Nombre: "
-				<< resultado.procesoMayorMemoria.nombre << "\n";
-		archivo << "Memoria Utilizada: "
-				<< resultado.procesoMayorMemoria.memoriaMB << " MB\n";
-
-		archivo << "---------------------------------------------------------------------------\n";
-		archivo << "Top 5 Procesos por Consumo de Memoria:\n";
-
-		for (const auto& p : resultado.top5Memoria) {
-			archivo << std::left
-					<< std::setw(10) << p.pid << " - "
-					<< std::setw(40) << p.nombre << " - "
-					<< std::setw(15) << p.memoriaMB << " MB"
-					<< "\n";
-
-		}
-		archivo << "---------------------------------------------------------------------------\n";
 	}
 }

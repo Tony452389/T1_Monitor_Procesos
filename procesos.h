@@ -4,10 +4,10 @@
 #include <vector>
 
 struct Proceso {
-	int pid;
+	int pid = 0;
+	int memoriaMB = 0; 
+	
 	std::string nombre;
-	int memoriaMB;
-
 };
 
 std::vector<Proceso> obtenerProcesos();
