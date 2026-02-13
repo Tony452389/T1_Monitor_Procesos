@@ -3,6 +3,7 @@
 #include <iostream>
 #include <algorithm>
 #include <unordered_map>
+#include <stdexcept>
 
 // Función para verificar si un proceso sospechoso ya ha sido registrado con la misma razón
 bool yaExisteSospechoso(const std::vector<ProcesoSospechoso>& lista, int pid, const std::string& razon) {
@@ -16,6 +17,11 @@ bool yaExisteSospechoso(const std::vector<ProcesoSospechoso>& lista, int pid, co
 
 ResultadoAnalisis analisisBasico(std::vector<Proceso> procesos) {
 	
+	//Proteccion contra entradas vacias
+	if (procesos.empty()) {
+		throw std::runtime_error("No se encontraron procesos para analizar.");
+	}
+
 	ResultadoAnalisis resultado;
 	
 	// Ordenar por memoria descendente
@@ -29,6 +35,10 @@ ResultadoAnalisis analisisBasico(std::vector<Proceso> procesos) {
 	resultado.altoConsumo = 0;
 	
 	for (const auto& p : procesos) {
+		//Proteccion contra entradas con memoria negativa
+		if (p.memoriaMB < 0) {
+			throw std::runtime_error("Proceso con memoria negativa detectado. PID: " + std::to_string(p.pid));
+		}
 		if (p.memoriaMB > 500) { // Umbral de 500 MB
 			resultado.altoConsumo++;
 		}

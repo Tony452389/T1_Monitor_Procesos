@@ -18,8 +18,9 @@ int main(){
 		while (!opcionValida) {
 			std::cout << "Seleccione el tipo de analisis que desea realizar: \n";
 			std::cout << "1. Analisis Basico\n";
-			std::cout << "2. Analisis Estricto\n";
+			std::cout << "2. Analisis Estricto\n\n";
 
+			std::cout << "Ingrese el numero de opcion: ";
 			std::cin >> opcion;
 
 			if (std::cin.fail() || (opcion != 1 && opcion != 2)) {
