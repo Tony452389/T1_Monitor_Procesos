@@ -5,9 +5,9 @@
 #include <chrono>
 #include <ctime>
 
-void registrarProcesos(const ResultadoAnalisis& resultado) {
+void registrarProcesos(const ResultadoAnalisis& resultado, const std::string& nombreArchivo) {
 
-	std::ofstream archivo("Registro_Procesos.txt");
+	std::ofstream archivo(nombreArchivo);
 
 	if (!archivo.is_open()) {
 		return;

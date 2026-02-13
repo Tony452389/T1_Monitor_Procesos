@@ -41,7 +41,27 @@ int main(){
 		//------------------------------------------------------------------------ Analisis Basico -----------------------------------------------------------------------------
 		if (opcion == 1) {
 			resultado = analisisBasico(procesos);
-			registrarProcesos(resultado);
+
+			//Solicitar nombre de archivo para guardar el resultado
+			std::string nombreArchivo;
+
+			std::cout << "Ingrese el nombre del archivo para guardar el resultado (sin extension): ";
+
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar el buffer de entrada
+			std::getline(std::cin, nombreArchivo);
+			std::cout << "\n";
+
+			//Validar no vacio
+			while (nombreArchivo.empty()) {
+				std::cout << "El nombre del archivo no puede estar vacio. Por favor, ingrese un nombre valido: ";
+				std::getline(std::cin, nombreArchivo);
+			}
+
+			//Agregar extension .txt si no la tiene
+			if (nombreArchivo.find(".txt") == std::string::npos) {
+				nombreArchivo += ".txt";
+			}
+			registrarProcesos(resultado, nombreArchivo);
 
 			int limite = 20; // Limite de procesos a mostrar en la tabla
 
@@ -78,7 +98,25 @@ int main(){
 		//------------------------------------------------------------------------ Analisis Estricto ---------------------------------------------------------------------------
 		else if (opcion == 2) {
 			resultado = analisisEstricto(procesos);
-			registrarProcesos(resultado);
+			//Solicitar nombre de archivo para guardar el resultado
+			std::string nombreArchivo;
+
+			std::cout << "Ingrese el nombre del archivo para guardar el resultado (sin extension): ";
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); // Limpiar el buffer de entrada
+			std::getline(std::cin, nombreArchivo);
+			std::cout << "\n";
+
+			//Validar no vacio
+			while (nombreArchivo.empty()) {
+				std::cout << "El nombre del archivo no puede estar vacio. Por favor, ingrese un nombre valido: ";
+				std::getline(std::cin, nombreArchivo);
+			}
+
+			//Agregar extension .txt si no la tiene
+			if (nombreArchivo.find(".txt") == std::string::npos) {
+				nombreArchivo += ".txt";
+			}
+			registrarProcesos(resultado, nombreArchivo);
 
 			//Solicitar limite de procesos a mostrar
 			int limite;
